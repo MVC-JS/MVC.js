@@ -25,7 +25,7 @@ Google is an amazing company...
 It's that easy to create a data bound object! Whenever you change the object, your HTML automatically gets updated with the new data.
 
 # Technologies
-The cool part about MVC.js, is it allows you to put put any valid JavaScript expressions inside the {{}}. Also MVC.js uses ES6 proxies to allow for instantaneous updates of your HTML. This comes with another benefit - Since ES6 provides an easy way for MVC.js to watch for changes in your objects, the code required is extremely small.
+The cool part about MVC.js, is it allows you to put put any valid JavaScript expressions inside the {{}}. Also MVC.js uses [ES6 Proxy Set Traps](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) to allow for instantaneous updates of your HTML. This comes with another benefit - Since ES6 provides an easy way for MVC.js to watch for changes in your objects, the code required is extremely small.
 
 # Size and Speed
 MVC.js's core and repeat module combined are 17 TIMES smaller than the Angular core. No more slow load times while loading the giant angular dependency. The minified MVC.js core takes less than 10ms to load on a standard Wifi connection!
@@ -49,3 +49,8 @@ The various modules allow you to add features of MVC.js that you need, when you 
 You might be asking your self, "How can MVC.js use ES6 features without transpiling to ES5?" 
 
 Well the answer is simple, browsers have caught up! As of this writting, most major features of ES6, incuding those used in the framework, are supported by the latest versions of all major browsers: Chrome, Firefox, Opera, Safari and Microsoft Edge!
+
+### Useful Links
+[A full ES6 Compatibility Table] (https://kangax.github.io/compat-table/es6/)
+<br>
+[A table of browser support for ES6 Proxies - The core ES6 feature behind MVC.js](http://caniuse.com/#feat=proxy)
