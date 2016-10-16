@@ -2,46 +2,101 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>MVC.js</title>
+    <title>Mvc.js by MVC-JS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    
-    <!--Icons-->
-    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">MVC.js</h1>
+      <h1 class="project-name">Mvc.js</h1>
       <h2 class="project-tagline">So simple that it&#39;s name is it&#39;s purpose: MVC.js is a simple, lightweight, and modern JavaScript MVC framework.</h2>
-      <a href="https://github.com/MVC-JS/MVC.js/releases/download/v1.0/mvc.zip" class="btn">Download the Files</a>
-      <a href="https://github.com/MVC-JS/MVC.js/zipball/master" class="btn">Download the Source</a>
       <a href="https://github.com/MVC-JS/MVC.js" class="btn">View on GitHub</a>
+      <a href="https://github.com/MVC-JS/MVC.js/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/MVC-JS/MVC.js/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
     <section class="main-content">
       <h1>
 <a id="mvcjs" class="anchor" href="#mvcjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MVC.js</h1>
 
-<p>So simple it's name is it's purpose: Simple, lightweight, modern JavaScript MVC framework.</p>
+<p><strong>The problem with other MVC frameworks is that they're always either too heavy, too slow, bloated or overly complicated.</strong></p>
+
+<p>While Angular.js was relatively easy, it was over bloated with features and abstractions and was an extremely heavy dependency. Angular 2 and React aim to solve these issues, but they have a sharper learning curve and over complicate everything. </p>
+
+<p>MVC.js aims to solve all of these problems. MVC.js uses modern ES6 features to make the framework extremely lightweight, performant, and most of all easy to use. </p>
+
+<h1>
+<a id="ease-of-use" class="anchor" href="#ease-of-use" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ease of Use</h1>
+
+<p>Creating an MVC object with data binding is extremely easy!</p>
+
+<p><strong>JavaScript</strong></p>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> app <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">MVC</span>();
+
+<span class="pl-smi">app</span>.<span class="pl-c1">name</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"</span>Google<span class="pl-pds">"</span></span></pre></div>
+
+<p><strong>HTML</strong></p>
+
+<div class="highlight highlight-text-html-basic"><pre>{{app.name}} is an amazing company...</pre></div>
+
+<p><strong>Result:</strong></p>
+
+<div class="highlight highlight-text-html-basic"><pre>Google is an amazing company...</pre></div>
+
+<p>It's that easy to create a data bound object! Whenever you change the object, your HTML automatically gets updated with the new data.</p>
+
+<h1>
+<a id="technologies" class="anchor" href="#technologies" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Technologies</h1>
+
+<p>The cool part about MVC.js, is it allows you to put put any valid JavaScript expressions inside the {{}}. Also MVC.js uses <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy">ES6 Proxy Set Traps</a> to allow for instantaneous updates of your HTML. This comes with another benefit - Since ES6 provides an easy way for MVC.js to watch for changes in your objects, the code required is extremely small.</p>
+
+<h1>
+<a id="size-and-speed" class="anchor" href="#size-and-speed" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Size and Speed</h1>
+
+<p>MVC.js's core and repeat module combined are 17 TIMES smaller than the Angular core. No more slow load times while loading the giant angular dependency. The minified MVC.js core takes less than 10ms to load on a standard Wifi connection!</p>
+
+<h1>
+<a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h1>
+
+<p>The easiest way to get started is to download the minified files. Then include the dependencies you want above you script</p>
+
+<p>After downloading the files:</p>
+
+<div class="highlight highlight-text-html-basic"><pre><span class="pl-c">&lt;!--Core--&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>core.js<span class="pl-pds">"</span></span>/&gt;
+<span class="pl-c">&lt;!--Other Modules--&gt;</span>
+&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>repeat.js<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<p>That's it, you can now use MVC.js and all it's amazing features!</p>
+
+<h1>
+<a id="modules" class="anchor" href="#modules" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Modules</h1>
+
+<p>The various modules allow you to add features of MVC.js that you need, when you need them. For example if you want something similar to ng-repeat, you can include the repeat module and you use the MVC.js's repeat module. The modular aspect of the framework keeps it extremely lightweight and ensures that you only have to take what you need.</p>
+
+<h1>
+<a id="support" class="anchor" href="#support" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support</h1>
+
+<p>You might be asking your self, "How can MVC.js use ES6 features without transpiling to ES5?" </p>
+
+<p>Well the answer is simple, browsers have caught up! As of this writting, most major features of ES6, incuding those used in the framework, are supported by the latest versions of all major browsers: Chrome, Firefox, Opera, Safari and Microsoft Edge!</p>
+
+<h3>
+<a id="useful-links" class="anchor" href="#useful-links" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Useful Links</h3>
+
+<p><a href="https://kangax.github.io/compat-table/es6/">A full ES6 Compatibility Table</a>
+<br>
+<a href="http://caniuse.com/#feat=proxy">A table of browser support for ES6 Proxies - The core ES6 feature behind MVC.js</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/MVC-JS/MVC.js">Mvc.js</a> is maintained by <a href="https://github.com/MVC-JS">MVC-JS</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
 
     </section>
 
