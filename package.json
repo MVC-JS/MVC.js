@@ -1,0 +1,13 @@
+{
+  "name": "mvc",
+  "version": "1.0.0",
+  "description": "An MVC framework so simple that its name is its purpose",
+  "scripts": {
+    "build": "./node_modules/.bin/babili src -d minsrc --no-comments"
+  },
+  "author": "David Nagli <davidnagli@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babili": "0.0.7"
+  }
+}

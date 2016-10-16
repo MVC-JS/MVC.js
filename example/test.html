@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <script src="../src/core.js"></script>
+        <script src="../src/repeat.js"></script>
+        <script src="../src/request.js"></script>
+        <script>
+            /*Basic MVC Example */
+            var app = new MVC();
+            app.name = "Facebook";
+            app.company = "Facebook Inc.";
+
+            /*Demo of data binding*/
+            window.onload = function () {
+                document.getElementById("changeCompanyButton").onclick = function () {
+                    app.name = "David";
+                }
+            };
+
+            /*Demo of How to Populate MVC Objects Through an API*/
+            //Send a GET request to users.json and then take that data and set app.users to that data
+            MVC.request("GET", "/example/users.json").then(data => app.users = data);
+        </script>
+    </head>
+    <body style="font-family: sans-serif;">
+        <p>Name: {{app.name}}</p>
+        <p>Company: {{app.company}}</p>
+        <button id="changeCompanyButton">Change Company</button>
+        <h2>Users</h2>
+        <div>
+            <span class="mvc-repeat" iterator="user" iterable="app.users">
+                {{iterator["user"].username}}
+            </span>
+        </div>
+    </body>
+</html>
