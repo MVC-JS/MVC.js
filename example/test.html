@@ -28,9 +28,11 @@
         <button id="changeCompanyButton">Change Company</button>
         <h2>Users</h2>
         <div>
-            <span class="mvc-repeat" iterator="user" iterable="app.users">
-                {{iterator["user"].username}}
-            </span>
+            <mvc-repeat iterator="user" iterable="app.users">
+                <div>
+                    {{iterator["user"]}}
+                </div>
+            </mvc-repeat>
         </div>
     </body>
 </html>

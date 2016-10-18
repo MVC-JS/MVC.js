@@ -52,13 +52,27 @@ window.addEventListener("load", function () {
         }
     }
 
+    parseHandlebarsInBody(0);
 
-    while (true) {
-        let indexOfOpeningHandlebar = document.body.innerHTML.indexOf("{{");
+    //Done, call the onload event function if exists (it is optional to consume it)
+    if(MVC.onload !== undefined){
+        MVC.onload();
+    }
+});
 
-        if (indexOfOpeningHandlebar === -1) {
-            break;
-        } else {
+/**
+ * Recursively parses all handlebars
+ */
+function parseHandlebarsInBody(startingPosition) {
+    let indexOfOpeningHandlebar = document.body.innerHTML.indexOf("{{", startingPosition);
+
+    var isEscapedHandlebar = document.body.innerHTML.charAt(indexOfOpeningHandlebar - 1) === "~";
+
+    if (indexOfOpeningHandlebar !== -1) {
+        if(isEscapedHandlebar){
+            //call the function recursively, from the next position after the current opening handlebar
+            parseHandlebarsInBody(indexOfOpeningHandlebar + 1)
+        }else{
             let startOfExpression = indexOfOpeningHandlebar + 2;
             let endOfExpression = document.body.innerHTML.indexOf("}}", indexOfOpeningHandlebar);
 
@@ -79,16 +93,14 @@ window.addEventListener("load", function () {
 
             let newElement = "<span class='mvc' data-original-expression='" + expression + "'>" + valueOfExpression.toString() + "</span>";
 
+            //todo: bug occurs on this line when this occurs after the initial path of the script ex. after a while an array is changed and this gets called. The problem is that this line rerenders the whole DOM, which detaches event listeners
             document.body.innerHTML = document.body.innerHTML.substring(0, indexOfOpeningHandlebar) + newElement + document.body.innerHTML.substring(endOfExpression + 2, document.body.innerHTML.length);
+
+            //recursive from the beginning
+            parseHandlebarsInBody(0);
         }
     }
-
-    //Done, call the onload event function if exists (it is optional to consume it)
-    if(MVC.onload !== undefined){
-        MVC.onload();
-    }
-
-});
+}
 
 
 //Polyfill for String.prototype.includes
