@@ -36,11 +36,6 @@ function handleChangedArrays(target, property, value, handler) {
 
     if(Array.isArray(value)){
 
-        console.log('target:', target);
-        console.log('property:', property);
-        console.log('value:', value);
-        console.log("---");
-
         //initialize the target[property] to an empty array if it was never defined (initialized)
         target[property] = target[property] !== undefined ? target[property] : [];
 

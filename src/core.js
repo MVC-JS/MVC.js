@@ -93,7 +93,6 @@ function parseHandlebarsInBody(startingPosition) {
 
             let newElement = "<span class='mvc' data-original-expression='" + expression + "'>" + valueOfExpression.toString() + "</span>";
 
-            //todo: bug occurs on this line when this occurs after the initial path of the script ex. after a while an array is changed and this gets called. The problem is that this line rerenders the whole DOM, which detaches event listeners
             document.body.innerHTML = document.body.innerHTML.substring(0, indexOfOpeningHandlebar) + newElement + document.body.innerHTML.substring(endOfExpression + 2, document.body.innerHTML.length);
 
             //recursive from the beginning
